@@ -6,7 +6,8 @@ import atexit
 ser = serial.Serial('/dev/ttyUSB0', 9600)
 
 def drive(speed='', turn='', power=''):
-	buf = "SPEED;%s\r\nTURN;%s\r\n%s\r\n" % (str(turn), str(speed), power)
+	buf = "SPEED %s\r\nTURN %s\r\n%s\r\n" % (str(speed), str(turn), power)
+	print buf;
 	ser.write(buf)
 
 def good(var):
@@ -67,7 +68,7 @@ def main():
 			#increment index and roll over
 			historyIndex = (historyIndex + 1) % historyLength 
 			
-			print leftDepth,"\t-\t", centerDepth,"\t-\t",rightDepth
+			#print leftDepth,"\t-\t", centerDepth,"\t-\t",rightDepth
 			
 			if good(leftDepth) and good(rightDepth) and good(centerDepth):
 				drive(1023) # forward
