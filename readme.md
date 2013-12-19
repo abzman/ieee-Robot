@@ -8,11 +8,12 @@ Serial Commands:
 * TURN [0-1023]
 * SPEED [0-1023]
 * SPEEDLEVEL [-1,1]
-* POWER
+* POWER [0,1]
 
 Serial Data:
 * Power [0-1023]
-* "Power Toggled"
+* "Power Off"
+* "Power On"
 * "Speed Up"
 * "Speed Down"
 * "Invalid Parameter"
