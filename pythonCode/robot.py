@@ -88,7 +88,7 @@ def main():
 			break
 
 if __name__ == "__main__":
-	atexit.register(drive, 512, 512, 'POWER')
+	atexit.register(drive, 512, 512, 'POWER 0')
 	time.sleep(2)
-	ser.write("POWER\r\n")
+	ser.write("POWER 1\r\n")
 	main()
